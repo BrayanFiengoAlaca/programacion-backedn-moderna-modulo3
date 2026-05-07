@@ -1,4 +1,4 @@
-import JwtService from "../../infraestructure/security/jwt.service.js";
+import JwtService from "../../infrastructure/security/jwt.service.js";
 
 export const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;

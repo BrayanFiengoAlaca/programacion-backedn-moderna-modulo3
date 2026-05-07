@@ -2,13 +2,16 @@
 import { Sequelize } from "sequelize";
  
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-    process.env.DB_PASSWORD,{
-      host: process.env.DB_HOST,
-      dialect: "mysql",
-    }
-  );
+  process.env.MYSQL_DATABASE,
+  process.env.MYSQL_USER,
+  process.env.MYSQL_PASSWORD,
+  {
+    host: process.env.MYSQL_HOST,
+    port: 3306,
+    dialect: "mysql",
+    logging: false,
+  }
+);
  
 export const connectMysql = async () => {
   try {

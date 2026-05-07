@@ -5,7 +5,7 @@
   "main": "index.js",
   "types": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules node -r dotenv/config ./node_modules/jest/bin/jest.js",
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
@@ -22,11 +22,16 @@
     "mongoose": "^9.4.1",
     "morgan": "^1.10.1",
     "multer": "^2.1.1",
-    "mysql2": "^3.22.0",
+    "mysql2": "^3.22.3",
     "nodemailer": "^8.0.5",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "cross-env": "^10.1.0",
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2"
   }
 }

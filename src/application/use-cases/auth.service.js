@@ -1,7 +1,7 @@
 // Aquí definimos la lógica de negocio relacionada con la autenticación, como registrar usuarios y generar tokens JWT.
 import UserEntity from "../../domain/entities/user.entity.js";
-import HashService from "../../infraestructure/security/hash.service.js";
-import JwtService from "../../infraestructure/security/jwt.service.js";
+import HashService from "../../infrastructure/security/hash.service.js";
+import JwtService from "../../infrastructure/security/jwt.service.js";
 
 // 
 export default class AuthService {
