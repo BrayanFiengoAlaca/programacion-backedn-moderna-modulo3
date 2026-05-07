@@ -198,4 +198,19 @@ router.delete("/:id", authMiddleware, roleMiddleware(["admin"]), noteController.
 router.post("/:id/share", authMiddleware, noteController.shareNote); // solo usuarios autenticados pueden compartir una nota por su id, y se le pasará el id del usuario con quien se quiere compartir la nota en el body de la petición
 
 
+//Tarea 3 (paso 1)
+// Ruta pública — no requiere token JWT
+router.get("/:id/public", async (req, res) => {
+    try {
+        const note = await noteService.getNoteById(req.params.id);
+        if (note.isPrivate) {
+            return res.status(403).json({ error: "This note is private" });
+        }
+        res.status(200).json(note);
+    } catch (error) {
+        res.status(404).json({ error: error.message });
+    }
+});
+
+
 export default router;
