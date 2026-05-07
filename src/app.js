@@ -1,3 +1,4 @@
+//Tarea 1 (Paso 7)
 //El cerebro principal
 import 'dotenv/config';
 import express from 'express';
@@ -7,6 +8,7 @@ import morgan from 'morgan';
 import { loggerMiddleware } from './presentation/middlewares/loger.middleware.js';
 import noteRoutes from './presentation/routes/note.routes.js';
 import authRoutes from './presentation/routes/auth.routes.js';
+import categoryRoutes from './presentation/routes/category.routes.js';
 import { connectMongo } from './infrastructure/database/mongo/connection.js';
 import { connectMysql } from './infrastructure/database/mysql/connection.js';
 import { setupSwagger } from './infrastructure/config/swagger.config.js';
@@ -35,7 +37,7 @@ app.use(loggerMiddleware); //Activa el logger en TODAS las rutas
 app.use('/uploads', express.static('uploads')); //Sirve imágenes como archivos estáticos
 app.use('/api/v1/auth', authRoutes);//Conecta las rutas de autenticación
 app.use('/api/v1/notes',noteRoutes); //Conecta las rutas de notas
- 
+app.use('/api/v1/categories', categoryRoutes); //Conecta las rutas de categorías
 
 // primer endpoint de tipo GET
 app.get('/api/health', (req, res) => {
