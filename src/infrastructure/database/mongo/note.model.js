@@ -10,6 +10,7 @@ const noteSchema = new Schema(
     isPrivate: { type: Boolean, default: false },
     password: { type: String },
     userId: { type: String, required: true },
+    categoryId: { type: String, default: null }, //Tarea 2 (Paso 2)
   },
   { timestamps: true },
 );

@@ -14,7 +14,8 @@ export default class NoteMySQLRepository {
             imageUrl: noteEntity.imageUrl,
             isPrivate: noteEntity.isPrivate,
             password: noteEntity.password,
-            userId: noteEntity.userId
+            userId: noteEntity.userId,
+            categoryId: noteEntity.categoryId, //tarea 2 (Paso 3)
         });
         // Se llama al metodo toJSON de sequelize, para convertir el objeto note a un objeto plano, y se retorna el resultado
         return note.toJSON();

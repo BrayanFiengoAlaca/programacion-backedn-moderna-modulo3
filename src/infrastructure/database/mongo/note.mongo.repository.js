@@ -13,7 +13,8 @@ export default class NoteMongoRepository {
             imageUrl: noteEntity.imageUrl,
             isPrivate: noteEntity.isPrivate,
             password: noteEntity.password,
-            userId: noteEntity.userId
+            userId: noteEntity.userId,
+            categoryId: noteEntity.categoryId, //tarea 2 (Paso 3)
         });
         // Se llama al metodo save de mongoose
         const savedNote = await note.save();

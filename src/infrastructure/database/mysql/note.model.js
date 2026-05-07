@@ -12,6 +12,7 @@ const NoteModel = sequelize.define(
     isPrivate: { type: DataTypes.BOOLEAN, defaultValue: false },
     password: { type: DataTypes.STRING },
     userId: { type: DataTypes.STRING, allowNull: false },
+    categoryId: { type: DataTypes.STRING, defaultValue: null }, //Tarea 2 (Paso 2)
   },
   {
     timestamps: true,
